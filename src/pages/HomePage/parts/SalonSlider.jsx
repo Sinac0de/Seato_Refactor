@@ -1,10 +1,9 @@
 import { useEffect, useState, useCallback } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import "@splidejs/splide/css";
 import { Link } from "react-router-dom";
 import { sliderOptions } from "src/utils/SliderConfigs/sliderConfigs";
-import Card from "../../../components/Card/Card";
-import SalonItem from "../../Salons/parts/SalonItem";
+import Card from "src/components/Card/Card";
 
 const SalonSlider = () => {
   const [salons, setSalons] = useState([]);
@@ -40,23 +39,23 @@ const SalonSlider = () => {
 
   return (
     salons && (
-      <div className="">
-        <div className="flex justify-between p-10">
-          <h1 className="font-bold">لیست سالن های زیبایی</h1>
+      <div className="flex flex-col p-10">
+        <div className="flex justify-between ">
+          <h1 className="font-bold text-2xl">لیست سالن های زیبایی</h1>
           <Link
             to="/salons"
-            className="bg-[#B6BCCB9C] px-5 p-2 rounded-full font-bold"
+            className="bg-[#B6BCCB9C] px-5 p-2 rounded-full font-bold text-base"
           >
             همه سالن ها
           </Link>
         </div>
-        <div style={{ direction: "ltr" }}>
+        <div className="flex justify-center p-8 px-0">
           <Splide options={sliderOptions}>
             {salons.length > 0 &&
               salons.map((salon) => {
                 return (
                   <SplideSlide key={salon.id}>
-                    <SalonItem salon={salon} />
+                    <Card salon={salon} />
                   </SplideSlide>
                 );
               })}

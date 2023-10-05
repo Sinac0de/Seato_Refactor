@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import classes from "./Salons.module.css";
 import { Link } from "react-router-dom";
-import SalonItem from "./parts/SalonItem";
+import Card from "src/components/Card/Card";
 import { Fragment } from "react";
 import ReactModal from "react-modal";
 
@@ -81,7 +80,7 @@ const Salons = () => {
           <h1 className="font-bold absolute mx-auto top-0 right-0 left-0 w-fit text-[22px]">
             لیست سالن های زیبایی
           </h1>
-          <button className="bg-[#DADBDC9C] mt-10 text-base px-10 p-2 rounded-full">
+          <button className="bg-[#DADBDC9C] mt-10 text-base font-bold px-10 p-2 rounded-full">
             فیلتر
           </button>
         </div>
@@ -89,7 +88,7 @@ const Salons = () => {
         <div className="grid grid-flow-row gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 my-5">
           {salonList.map((salon) => (
             <Link to={`/salons/${salon.id}`} key={salon.id}>
-              <SalonItem salon={salon} />
+              <Card salon={salon} />
             </Link>
           ))}
         </div>
