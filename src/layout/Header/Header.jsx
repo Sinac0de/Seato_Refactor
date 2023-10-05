@@ -7,7 +7,7 @@ const Header = () => {
     <header className="p-8 px-14 relative bg-[#FDDDD780] font-medium text-[15px]">
       <nav className=" w-full flex lg:justify-between justify-end items-center">
         {/* nav links */}
-        <ul className="lg:flex gap-6 hidden">
+        <ul className="lg:flex gap-6 hidden text-[15px]">
           <li>
             <NavLink
               to="/"
@@ -44,11 +44,11 @@ const Header = () => {
           <img src={seatoLogoImg} />
         </Link>
         {/* user actions */}
-        <div className="flex items-center gap-4">
-          <Link to="/" className="text-[#4B4B4B]">
+        <div className="flex items-center gap-5">
+          <Link to="/" className="text-[#4B4B4B] text-[15px]">
             ورود
           </Link>
-          <button className="text-[#222222] bg-white rounded-full p-3 px-8">
+          <button className="text-[#222222] text-base bg-white rounded-full p-3 px-8 shadow-sm">
             ثبت نام
           </button>
         </div>
