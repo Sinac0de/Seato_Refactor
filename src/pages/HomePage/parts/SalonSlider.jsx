@@ -1,9 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import Card from "../../../components/Card/Card";
 import { Link } from "react-router-dom";
-import { sliderOptions } from "../../../utils/SliderConfigs/sliderConfigs";
+import { sliderOptions } from "src/utils/SliderConfigs/sliderConfigs";
+import Card from "../../../components/Card/Card";
+import SalonItem from "../../Salons/parts/SalonItem";
 
 const SalonSlider = () => {
   const [salons, setSalons] = useState([]);
@@ -39,21 +40,23 @@ const SalonSlider = () => {
 
   return (
     salons && (
-      <div>
-        {/* <div className={classes.caption}> */}
-        <div>
-          <h1>لیست سالن های زیبایی</h1>
-          <Link to="/salons">همه سالن ها</Link>
+      <div className="">
+        <div className="flex justify-between p-10">
+          <h1 className="font-bold">لیست سالن های زیبایی</h1>
+          <Link
+            to="/salons"
+            className="bg-[#B6BCCB9C] px-5 p-2 rounded-full font-bold"
+          >
+            همه سالن ها
+          </Link>
         </div>
-
-        {/* <div className={classes["list-wrapper"]}> */}
-        <div>
+        <div style={{ direction: "ltr" }}>
           <Splide options={sliderOptions}>
             {salons.length > 0 &&
               salons.map((salon) => {
                 return (
                   <SplideSlide key={salon.id}>
-                    <Card salon={salon} />
+                    <SalonItem salon={salon} />
                   </SplideSlide>
                 );
               })}

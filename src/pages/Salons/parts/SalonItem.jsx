@@ -1,4 +1,5 @@
-import classes from "./SalonItem.module.css";
+import yellowStar from "src/assets/images/yellowStar.png";
+
 const SalonItem = ({ onClick, salon }) => {
   function cardOnClickHandler(event) {
     onClick(salon.id);
@@ -8,18 +9,44 @@ const SalonItem = ({ onClick, salon }) => {
     star = salon.rating;
   }
   return (
-    <div className={classes.item} onClick={cardOnClickHandler}>
-      <div className={classes["image-holder"]}>
+    <div
+      className="bg-[#FFE7E2] p-3 flex flex-col gap-3 rounded-[28px] h-full hover:shadow transition-shadow"
+      onClick={cardOnClickHandler}
+    >
+      {/* image */}
+      <div className="flex justify-center">
         {salon.photo && (
-          <img className={classes["image"]} src={salon.photo.url} alt="Salon" />
+          <img
+            className="rounded-[22px] w-full h-[239px] object-cover"
+            src={salon.photo.url}
+            alt="Salon"
+          />
         )}
       </div>
-      <h4>{salon.name.replace(/['"]+/g, "")}</h4>
-      <p>{salon.address.replace(/['"]+/g, "")}</p>
-      <div className={classes.end}>
-        <p className={classes.rating}>
-          <span className="fa fa-star"></span> {star.toFixed(2)}
-        </p>
+      {/* card body */}
+      <div className="flex flex-col justify-between h-full gap-2">
+        {/* title */}
+        <div>
+          <h4 className="font-medium text-xl text-center">
+            {salon.name.replace(/['"]+/g, "")}
+          </h4>
+        </div>
+        {/* footer */}
+        <div className="flex items-end">
+          <span className="w-5/6">{salon.address.replace(/['"]+/g, "")}</span>
+          {/* ratings */}
+          <div className="flex max-w-10 gap-1">
+            <span className="">{star.toFixed(1)}</span>
+            <span className="">
+              <img
+                src={yellowStar}
+                className="object-contain"
+                width="17px"
+                height="17px"
+              />
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

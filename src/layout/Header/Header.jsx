@@ -19,16 +19,30 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/salons">سالن&zwnj;های زیبایی</NavLink>
+            <NavLink
+              to="/salons"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "font-bold" : ""
+              }
+            >
+              سالن&zwnj;های زیبایی
+            </NavLink>
           </li>
           <li>
-            <NavLink to="#">درباره ما</NavLink>
+            <NavLink
+              to="/About"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "font-bold" : ""
+              }
+            >
+              درباره ما
+            </NavLink>
           </li>
         </ul>
         {/* logo */}
-        <div className="absolute right-0 left-0 mx-auto w-fit">
+        <Link to="/" className="absolute right-0 left-0 mx-auto w-fit">
           <img src={seatoLogoImg} />
-        </div>
+        </Link>
         {/* user actions */}
         <div className="flex items-center gap-4">
           <Link to="/" className="text-[#4B4B4B]">

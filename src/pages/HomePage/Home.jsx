@@ -21,7 +21,11 @@ function Home() {
     //   {/* about us */}
     //   <AboutUs />
     // </section>
-    <div className="min-h-screen">hello</div>
+    <section className="min-h-screen">
+      <Intro />
+      {/* slider of limited salons */}
+      <SalonSlider />
+    </section>
   );
 }
 

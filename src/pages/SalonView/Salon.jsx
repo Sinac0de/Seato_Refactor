@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import classes from "./Salon.module.css";
-import Comments from "./Comments";
-import SalonDetail from "./SalonDetail";
+import SalonDetail from "./parts/SalonDetail/SalonDetail";
+import CommentsSection from "./parts/Comments/CommentsSection";
 
 function Salon() {
   const [detail, setDetail] = useState({
@@ -57,7 +57,7 @@ function Salon() {
         <div className={classes.caption}>
           <h2>آخرین بازخوردها</h2>
         </div>
-        <Comments salonId={detail.id} />
+        <CommentsSection salonId={detail.id} />
       </div>
     </section>
   );

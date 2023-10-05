@@ -7,6 +7,8 @@ import {
 import Layout from "./layout/Layout";
 import Home from "./pages/HomePage/Home";
 import Salons from "./pages/Salons/Salons";
+import Salon from "./pages/SalonView/Salon";
+import About from "./pages/About/About";
 
 function App() {
   const router = createBrowserRouter(
@@ -14,7 +16,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="salons" element={<Salons />} />
-        <Route path="/salons/:salonid" element={<Home />} />
+        <Route path="salons/:salonid" element={<Salon />} />
+        <Route path="about" element={<About />} />
       </Route>
     )
   );
