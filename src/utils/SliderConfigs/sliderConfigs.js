@@ -1,20 +1,23 @@
 export const sliderOptions = {
   type: "loop",
-  perPage: 4,
+  direction: "rtl",
   perMove: 1,
   autoplay: true,
-  gap: "1rem",
+  gap: "2em",
   interval: 5000,
   width: "95%",
   pagination: false,
   breakpoints: {
     1600: {
-      perPage: 3,
+      perPage: 4,
     },
     1400: {
-      perPage: 2,
+      perPage: 3,
     },
     850: {
+      perPage: 2,
+    },
+    0: {
       perPage: 1,
     },
   },
