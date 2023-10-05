@@ -6,3 +6,11 @@ export const api = {
   post: axios.post,
   delete: axios.delete,
 };
+
+export function fetchSalons() {
+  return;
+}
+
+export function fetchOneSalon() {
+  return;
+}

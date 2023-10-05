@@ -1,26 +1,27 @@
-import Intro from "./Intro";
-import SalonSlider from "./SalonSlider";
-import SalonRegistration from "./SalonRegistration";
-import RecentComments from "./RecentComments";
-import Feedback from "./Feedback";
-import AboutUs from "./AboutUs";
+import SalonSlider from "./parts/SalonSlider";
+import SalonRegistration from "./parts/SalonRegistration";
+import RecentComments from "./parts/RecentComments/RecentComments";
+import Feedback from "./parts/Feedback";
+import AboutUs from "./parts/About";
+import Intro from "./parts/Intro";
 
 function Home() {
   return (
-    <section>
-      {/* intro */}
-      <Intro />
-      {/* slider of limited salons */}
-      <SalonSlider />
-      {/* new salon registeration */}
-      <SalonRegistration />
-      {/* recent comments */}
-      <RecentComments />
-      {/* feedback form */}
-      <Feedback />
-      {/* about us */}
-      <AboutUs />
-    </section>
+    // <section>
+    //   {/* intro */}
+    //   <Intro />
+    //   {/* slider of limited salons */}
+    //   <SalonSlider />
+    //   {/* new salon registeration */}
+    //   <SalonRegistration />
+    //   {/* recent comments */}
+    //   <RecentComments />
+    //   {/* feedback form */}
+    //   <Feedback />
+    //   {/* about us */}
+    //   <AboutUs />
+    // </section>
+    <div className="min-h-screen">hello</div>
   );
 }
 
