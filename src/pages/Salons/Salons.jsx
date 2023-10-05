@@ -3,6 +3,7 @@ import classes from "./Salons.module.css";
 import { Link } from "react-router-dom";
 import SalonItem from "./parts/SalonItem";
 import { Fragment } from "react";
+import ReactModal from "react-modal";
 
 const Salons = () => {
   const [salonList, setSalonList] = useState([]);
@@ -29,6 +30,7 @@ const Salons = () => {
     } catch (error) {
       alert(error.message);
     }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -37,15 +39,49 @@ const Salons = () => {
 
   return (
     <Fragment>
-      {/* !! loading */}
-      {isLoading && <Modal />}
+      {/* Loading modal */}
+      <ReactModal
+        isOpen={isLoading}
+        contentLabel="Minimal Modal Example"
+        ariaHideApp={false}
+        style={{
+          overlay: {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(255, 255, 255, 0.75)",
+          },
+          content: {
+            display: "flex",
+            position: "absolute",
+            left: "0",
+            right: "0",
+            margin: "0 auto",
+            top: "40%",
+            width: "fit-content",
+            height: "fit-content",
+            border: "1px solid #ccc",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "28px",
+            outline: "none",
+            padding: "4em",
+          },
+        }}
+      >
+        <h4>درحال دریافت اطلاعات سالن ها...</h4>
+      </ReactModal>
+      {/* salons list section */}
       <section className="p-14 min-h-screen">
         {/* List caption and filter button */}
         <div className="w-full relative mb-5 p-3 flex justify-end">
           <h1 className="font-bold absolute mx-auto top-0 right-0 left-0 w-fit text-[22px]">
             لیست سالن های زیبایی
           </h1>
-          <button className="bg-[#DADBDC9C] text-base px-10 p-2 rounded-full">
+          <button className="bg-[#DADBDC9C] mt-10 text-base px-10 p-2 rounded-full">
             فیلتر
           </button>
         </div>
