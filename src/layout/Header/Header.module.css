@@ -1,0 +1,55 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    direction: rtl;
+    background: rgb(182,188,203);
+    background: linear-gradient(0deg, rgba(241,215,213,1) 00%, rgba(253,221,215,1) 100%);
+}
+
+.nav-links{
+    margin: 1rem;
+    margin-left: auto;
+}
+.nav-links ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 1rem;
+}
+
+.nav-links li a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.logo{
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.user-actions{
+    margin: 1rem;
+    margin-right: auto;
+}
+
+.user-actions button{
+    width: 120px;
+    height: 45px;
+    border-radius: 38px;
+    border: none;
+    font-family: 'IranSansWeb';
+}
+
+.user-actions .login{
+    color: #4B4B4B;
+    background-color: transparent;
+}
+
+.user-actions .signup{
+    color: #222222;
+    background-color: #FFFFFF;
+}
